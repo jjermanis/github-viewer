@@ -3,22 +3,22 @@
 
 <head>
   <script data-require="angularjs@1.6.4" data-semver="1.6.4" 
-          src="https://code.angularjs.org/1.6.4/angular.js"></script>
+          src="https://code.angularjs.org/1.6.4/angular.js">
+  </script>
+  <script data-require="angular-route@*" data-semver="1.6.2" 
+          src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-route.js">
+  </script>
   <link rel="stylesheet" href="styles/main.css" />
+  <script src="app.js"></script>
   <script src="githubController.js"></script>
+  <script src="userController.js"></script>
+  <script src="repoController.js"></script>
   <script src="githubService.js"></script>
 </head>
 
-<body ng-controller="GitHubController">
+<body>
   <h1>github Viewer</h1>
-  <form name="searchUser" ng-submit="search(username)">
-    <input type="search" required placeholder="Username" ng-model="username" />
-    <input type="submit" value="Search" />
-  </form>
-  <p>{{ helpPrompt }}</p>
-  <p ng-show="error">{{ error }}</p>
-
-  <div id="userDetails" ng-include="'userdetails.html'" ng-show="user"></div>
+  <div ng-view></div>
 </body>
 
 </html>

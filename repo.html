@@ -1,0 +1,13 @@
+<div>
+  <h2>{{repo.name}}</h2>
+  <div>(<a target="_blank" href={{repo.html_url}}>link to github</a>)</div>
+  <div>Issues: {{repo.open_issues_count}}</div>
+  <ul>
+    <li ng-repeat="contributor in contributors">
+      <img src={{contributor.avatar_url}} height=50>
+      <a href="#!/user/{{contributor.login}}"> {{contributor.login}} </a>
+    </li>
+  </ul>
+  <a href="#!/user/{{username}}">Back to {{username}}</a>
+  <a href="#/main">Back to search</a>
+</div>
