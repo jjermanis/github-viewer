@@ -1,10 +1,10 @@
 <!-- Intended for use within githubUserViewer module and GitHubController -->
 <div>
-  <h2>{{user.name}}</h2>
-  {{error}}
-  <div>(<a target="_blank" href={{user.html_url}}>link to github</a>)</div>
+  <h2 ng-bind="user.name"></h2>
+  <div ng-bind="error"></div>
+  <div ng-show="user">(<a target="_blank" href={{user.html_url}}>link to github</a>)</div>
   <img ng-src="{{user.avatar_url}}" height=100>
-  <div ng-show="user.bio">{{user.bio}}</div>
+  <div ng-bind="user.bio"></div>
   <div ng-show="repos">
     <h3>Repos</h3>
     <table>
